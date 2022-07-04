@@ -1,0 +1,67 @@
+header h1{
+  color:blue;
+  justify-items: center;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+}
+
+.challengers{
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.player{
+  width: 30vw;
+}
+
+.computer{
+  width: 30vw
+}
+
+.versus{
+  width: 20vw;
+}
+
+.challengers img{
+  
+  width: 25vw;
+  max-width: 600px;
+  min-width: 0px
+  
+  height: 25vh;
+  max-height: 300px;
+  min-height: 0px;
+
+}
+
+.shifumi button{
+    
+  width: 10vw;
+  max-width: 80px;
+  min-width: 20px
+  
+  height: 10vh;
+  max-height: 80px;
+  min-height: 20px;
+}
+
+.shifumi_player{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.shifumi_player button{
+    
+  width: 10vw;
+  max-width: 80px;
+  min-width: 20px
+  
+  height: 10vh;
+  max-height: 80px;
+  min-height: 20px;
+}
