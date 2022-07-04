@@ -1,7 +1,19 @@
-header h1{
+@font-face {
+  font-family: "Lobster";
+  src: url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
+}
+
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+}
+
+/* header h1{
   color:blue;
   justify-items: center;
 }
+
 
 main{
   display: flex;
@@ -26,7 +38,7 @@ main{
   width: 20vw;
 }
 
-.challengers img{
+.player_photo img{
   
   width: 25vw;
   max-width: 600px;
@@ -38,7 +50,19 @@ main{
 
 }
 
-.shifumi button{
+.computer_photo img{
+  
+  width: 25vw;
+  max-width: 600px;
+  min-width: 0px
+  
+  height: 25vh;
+  max-height: 300px;
+  min-height: 0px;
+
+}
+
+.shifumi_player button{
     
   width: 10vw;
   max-width: 80px;
@@ -55,7 +79,7 @@ main{
   justify-content: space-around;
 }
 
-.shifumi_player button{
+.shifumi_computer button{
     
   width: 10vw;
   max-width: 80px;
@@ -64,4 +88,107 @@ main{
   height: 10vh;
   max-height: 80px;
   min-height: 20px;
+} */
+
+.player_photo{
+  height:50px;
+  width: 50px;
+}
+
+.computer_photo{
+  height:50px;
+  width: 50px;
+}
+
+
+.pierre{
+  height:50px;
+  width: 50px;
+  border: none;
+  background-color: none;
+  box-shadow: 8px 8px 8px #1c1a19;
+  border-radius: 10px;
+}
+
+.pierre button{
+  border: none;
+  background-color: none;
+}
+
+.pierre img{
+  height:50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.feuille{
+  height:50px;
+  width: 50px;
+}
+
+.feuille img{
+  height:50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.ciseaux{
+  height:50px;
+  width: 50px;
+}
+
+.ciseaux img{
+  height:50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.versus img{
+  height:50px;
+  width: 50px;
+}
+
+.player_photo{
+  height:50px;
+  width: 50px;
+}
+.player_photo{
+  height:50px;
+  width: 50px;
+}
+
+main{
+  width: 100vw;
+  height: 100vh;
+}
+
+header h1{
+  text-align: center;
+  color:black;
+  font-family: "Lobster";
+  font-size: 2em;
+  margin: 20px 20px 20px 20px;
+
+}
+
+.challengers{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player{
+  width:30vw;
+  margin: 20px, 20px, 20px, 20px;
+}
+
+.computer{
+  width:30vw;
+  margin: 20px, 20px, 20px, 20px;
+}
+
+.versus{
+  width:20vw;
 }
