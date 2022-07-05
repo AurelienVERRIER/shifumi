@@ -90,12 +90,23 @@
 //   titre.innerHTML = `<h1>Shi-Fu-Mi!!!</h1>`
 // }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
 const onButtonClick = () => {
+  
   const titre = document.getElementById('titre')
   titre.innerHTML = `<h1>Shi-Fu-Mi!!!</h1>`
+  
+  const random = getRandomInt(3)
   const aleatoire = document.getElementById('aleatoire')
-  aleatoire.innerHTML = `<p>3</p>`
+  aleatoire.innerHTML = `<p>${random}</p>`
 }
+
+
+
 
 const onMouseOver = () => {
   console.log("Clique pour changer le titre")
