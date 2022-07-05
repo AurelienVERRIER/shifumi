@@ -10,12 +10,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-  <title id="titre">Pierre / Feuille / Ciseaux</title>
+  <title >Pierre / Feuille / Ciseaux</title>
+
 </head>
 
 <body>
 
-  <header>
+  <header id="titre">
 
     <h1>Pierre / Feuille / Ciseaux !</h1>
 
@@ -30,7 +31,7 @@
         
         <img class="player_photo" src="img/player.jpg" alt="Photo_du_joueur" />
         
-        <section classe="shifumi_player">
+        <section class="shifumi_player">
           <button class="pierre">
             <img src="img/pierre.png" alt="Main_Pierre" />
             <figcaption>Pierre!</figcaption>
@@ -45,8 +46,12 @@
           </button>
         </section>
 
-        <button class="test">
-          <img src="img/ciseaux.jpg" alt="Main_Ciseaux" />
+        <section id="choix">
+          <p>Pierre, Feuille ou Ciseaux ?</p>
+        </section>
+
+        <button class="test" onclick="onButtonClick()">
+          <img id="image" src="img/ciseaux.jpg" alt="Main_Ciseaux" onmouseover="onMouseOver()"/>
           <figcaption>Test!</figcaption>
         </button>
 
@@ -73,8 +78,13 @@
           <section class="ciseaux">
             <img src="img/ciseaux.jpg" alt="Main_Ciseaux" />
           </section>
-       
+        </section> 
+        
+        <section id="aleatoire">
+          <p>Que va-t-il choisir ?</p>
         </section>
+
+        
       </section>
     </section>
 
