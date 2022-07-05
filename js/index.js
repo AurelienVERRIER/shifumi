@@ -90,24 +90,55 @@
 //   titre.innerHTML = `<h1>Shi-Fu-Mi!!!</h1>`
 // }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
 
 
 const onButtonClick = () => {
+
+  // const versus = document.getElementById("versus")
+  // versus.innerHTML = `<img src="img/egalite.jpg"/>`
+  // console.log(versus)
   
   const titre = document.getElementById('titre')
   titre.innerHTML = `<h1>Shi-Fu-Mi!!!</h1>`
   
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  
+
   const random = getRandomInt(3)
-  const aleatoire = document.getElementById('aleatoire')
-  aleatoire.innerHTML = `<p>${random}</p>`
+
+  if (random === 0) {
+    const aleatoire = document.getElementById('aleatoire')
+    aleatoire.innerHTML = `<p>Pierre!</p>`
+    const versus = document.getElementById('versus')
+  // ou const versus = document.getElementsByClassName("versus")[0]
+    versus.innerHTML = `<img src="img/egalite.jpg"/>`
+  }
+
+  if (random === 1) {
+    const aleatoire = document.getElementById('aleatoire')
+    aleatoire.innerHTML = `<p>Feuille!</p>`
+    const versus = document.getElementById('versus')
+    versus.innerHTML = `<img src="img/defaite.jpg"/>`
+  }
+
+  if (random === 2) {
+    const aleatoire = document.getElementById('aleatoire')
+    aleatoire.innerHTML = `<p>Ciseaux!</p>`
+    const versus = document.getElementById('versus')
+    versus.innerHTML = `<img src="img/victoire.jpg"/>`
+  }
+  
 }
 
 
 
 
 const onMouseOver = () => {
-  console.log("Clique pour changer le titre")
+  const choix = document.getElementById('choix')
+  choix.innerHTML = `<p>Clique sur ton choix</p>`
 }
+
+
+
