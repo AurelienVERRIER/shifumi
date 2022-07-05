@@ -9,97 +9,6 @@
   src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 }
 
-/* header h1{
-  color:blue;
-  justify-items: center;
-}
-
-
-main{
-  display: flex;
-  flex-direction: column;
-}
-
-.challengers{
-  display: flex;
-  flex-direction: row;
-  align-content: space-between;
-}
-
-.player{
-  width: 30vw;
-}
-
-.computer{
-  width: 30vw
-}
-
-.versus{
-  width: 20vw;
-}
-
-.player_photo img{
-  
-  width: 25vw;
-  max-width: 600px;
-  min-width: 0px
-  
-  height: 25vh;
-  max-height: 300px;
-  min-height: 0px;
-
-}
-
-.computer_photo img{
-  
-  width: 25vw;
-  max-width: 600px;
-  min-width: 0px
-  
-  height: 25vh;
-  max-height: 300px;
-  min-height: 0px;
-
-}
-
-.shifumi_player button{
-    
-  width: 10vw;
-  max-width: 80px;
-  min-width: 20px
-  
-  height: 10vh;
-  max-height: 80px;
-  min-height: 20px;
-}
-
-.shifumi_player{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.shifumi_computer button{
-    
-  width: 10vw;
-  max-width: 80px;
-  min-width: 20px
-  
-  height: 10vh;
-  max-height: 80px;
-  min-height: 20px;
-} */
-
-.player_photo{
-  height:50px;
-  width: 50px;
-}
-
-.computer_photo{
-  height:50px;
-  width: 50px;
-}
-
 
 .pierre{
   height:50px;
@@ -107,13 +16,13 @@ main{
   border: none;
   background-color: none;
   box-shadow: 8px 8px 8px #1c1a19;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
-.pierre button{
+/* .pierre button{
   border: none;
   background-color: none;
-}
+} */
 
 .pierre img{
   height:50px;
@@ -121,9 +30,18 @@ main{
   margin-bottom: 10px;
 }
 
+
 .feuille{
   height:50px;
   width: 50px;
+  border: none;
+  background-color: none;
+  box-shadow: 8px 8px 8px #1c1a19;
+  border-radius: 0px;
+}
+
+.feuille button{
+
 }
 
 .feuille img{
@@ -135,6 +53,14 @@ main{
 .ciseaux{
   height:50px;
   width: 50px;
+  border: none;
+  background-color: none;
+  box-shadow: 8px 8px 8px #1c1a19;
+  border-radius: 0px;
+}
+
+.ciseaux button{
+  
 }
 
 .ciseaux img{
@@ -143,19 +69,6 @@ main{
   margin-bottom: 10px;
 }
 
-.versus img{
-  height:50px;
-  width: 50px;
-}
-
-.player_photo{
-  height:50px;
-  width: 50px;
-}
-.player_photo{
-  height:50px;
-  width: 50px;
-}
 
 main{
   width: 100vw;
@@ -179,16 +92,68 @@ header h1{
   align-items: center;
 }
 
+
 .player{
   width:30vw;
-  margin: 20px, 20px, 20px, 20px;
-}
-
-.computer{
-  width:30vw;
-  margin: 20px, 20px, 20px, 20px;
+  height: 70vh;
+  /* margin: 20px, 20px, 20px, 20px; */
 }
 
 .versus{
   width:20vw;
+  height: 70vh;
 }
+
+.computer{
+  width:30vw;
+  height: 70vh;
+}
+
+
+.player_photo{
+  width: 30vw;
+  max-width: 300px;
+  min-width: 50px
+  height: 30vh;
+  max-height: 300px;
+  min-height: 50px;
+}
+
+.computer_photo{
+  width: 30vw;
+  max-width: 300px;
+  min-width: 50px
+  height: 30vh;
+  max-height: 300px;
+  min-height: 50px;
+}
+
+.versus img{
+  width: 20vw;
+  max-width: 200px;
+  min-width: 40px
+  height: 20vh;
+  max-height: 200px;
+  min-height: 40px;
+}
+
+
+
+
+.shifumi_player{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.shifumi_computer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+
+
+
