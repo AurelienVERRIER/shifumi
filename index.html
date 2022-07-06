@@ -27,20 +27,20 @@
 
     <section class="challengers">
 
-      <section class="player">
+      <section id="game" class="player">
         
-        <img class="player_photo" src="img/player.jpg" alt="Photo_du_joueur" />
+        <img id="player" class="player_photo" src="img/player.jpg" alt="Photo_du_joueur" />
         
         <section class="shifumi_player">
-          <button class="pierre">
+          <button id="pierre" class="pierre" class="game-buttons">
             <img src="img/pierre.png" alt="Main_Pierre" />
             <figcaption>Pierre!</figcaption>
           </button>  
-          <button class="feuille">
+          <button id="feuille" class="feuille" class="game-buttons">
             <img src="img/feuille.jpg" alt="Main_Feuille" />
             <figcaption>Feuille!</figcaption>
           </button>  
-          <button class="ciseaux">
+          <button id="ciseaux" class="ciseaux" class="game-buttons">
             <img src="img/ciseaux.jpg" alt="Main_Ciseaux" />
             <figcaption>Ciseaux!</figcaption>
           </button>
@@ -50,22 +50,26 @@
           <p>Pierre, Feuille ou Ciseaux ?</p>
         </section>
 
-        <button class="test" onclick="onButtonClick()">
+        <!-- <button class="test" onclick="onButtonClick()">
           <img id="image" src="img/ciseaux.jpg" alt="Main_Ciseaux" onmouseover="onMouseOver()"/>
           <figcaption>Test!</figcaption>
-        </button>
+        </button> -->
 
       </section>
 
 
-      <section class="versus" id="versus">
-        <img src="img/versus.jpg" alt="Photo_versus" />
+      <section class="versus">
+        <section id="versus">
+          <img src="img/versus.jpg" alt="Photo_versus" />
+        </section>
+        <section id="fight">
+          <p>Fight!</p>
+        </section>
       </section>
-
 
       <section class="computer">
     
-        <img class="computer_photo" src="img/computer.jpg" alt="Photo_de_l'adversaire" />
+        <img id="ai" class="computer_photo" src="img/computer.jpg" alt="Photo_de_l'adversaire" />
     
         <section class="shifumi_computer">
 
@@ -91,8 +95,27 @@
   </main>
     
   <footer>
+    <section class="records">
+      <h3 id="roundTitle">Manche</h3>
+      <h3 id="playerTitle">Joueur</h3>
+      <h3 id="computerTitle">Ordinateur</h3>
+    </section>
 
+    <section class="totaux">
+      <div id="totalRound">
+        <p id="empty"></p>
+      </div>
+      <img id="totalPlayer" src="img/zeroetoile.jpg" alt="Score du Joueur"/>
+      <img id="totalComputer" src="img/zeroetoile.jpg" alt="Score de l'Ordinateur"/>
+    </section>
 
+    <section class="compteurs">
+      <p id="countRound"></p>
+      <p id="countPlayer"></p>
+      <p id="countComputer"></p>
+    </section>
+ 
+    
   </footer>
 
   <script src="js/index.js"></script>

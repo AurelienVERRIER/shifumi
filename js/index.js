@@ -92,52 +92,269 @@
 
 
 
-const onButtonClick = () => {
+// const onButtonClick = () => {
 
   // const versus = document.getElementById("versus")
   // versus.innerHTML = `<img src="img/egalite.jpg"/>`
   // console.log(versus)
   
-  const titre = document.getElementById('titre')
-  titre.innerHTML = `<h1>Shi-Fu-Mi!!!</h1>`
+  // const titre = document.getElementById('titre')
+  // titre.innerHTML = `<h1>Shi-Fu-Mi!!!</h1>`
   
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-  
+  // function getRandomInt(max) {
+  //   return Math.floor(Math.random() * max);
+  // }
+  // const random = getRandomInt(3)
+  // const countComputer = 0
 
-  const random = getRandomInt(3)
+  // if (random === 0) {
+    
+  //   const aleatoire = document.getElementById('aleatoire')
+  //   aleatoire.innerHTML = `<p>Pierre!</p>`
+  //   const versus = document.getElementById('versus')
+  // // ou const versus = document.getElementsByClassName("versus")[0]
+  //   versus.innerHTML = `<img src="img/egalite.jpg"/>`
+  //   const fight = document.getElementById('fight')
+  //   fight.innerHTML = `<p>Egalité!</p>`
 
-  if (random === 0) {
-    const aleatoire = document.getElementById('aleatoire')
-    aleatoire.innerHTML = `<p>Pierre!</p>`
-    const versus = document.getElementById('versus')
-  // ou const versus = document.getElementsByClassName("versus")[0]
-    versus.innerHTML = `<img src="img/egalite.jpg"/>`
+    // const euh = " E "
+    // const countPlayer = document.getElementById('countPlayer')
+    // countPlayer.innerHTML =`${countPlayer}+${euh}`
+    // return countPlayer
+  // }
+
+  // if (random === 1) {
+  //   const aleatoire = document.getElementById('aleatoire')
+  //   aleatoire.innerHTML = `<p>Feuille!</p>`
+  //   const versus = document.getElementById('versus')
+  //   versus.innerHTML = `<img src="img/defaite.jpg"/>`
+  //   const fight = document.getElementById('fight')
+  //   fight.innerHTML = `<p>Perdu!</p>`
+
+    // const countRound = countRound + 1
+    // return countRound
+    // const totalRound = document.getElementById('totalRound')
+    // totalRound.innerHTML = `<p>666</p>`
+    // return totalRound
+
+    // const countPlayer = document.getElementById('countPlayer')
+    // countPlayer.innerHTML = `document.getElementById('countPlayer')+` D ``
   }
 
-  if (random === 1) {
-    const aleatoire = document.getElementById('aleatoire')
-    aleatoire.innerHTML = `<p>Feuille!</p>`
-    const versus = document.getElementById('versus')
-    versus.innerHTML = `<img src="img/defaite.jpg"/>`
+  // if (random === 2) {
+  //   const aleatoire = document.getElementById('aleatoire')
+  //   aleatoire.innerHTML = `<p>Ciseaux!</p>`
+  //   const versus = document.getElementById('versus')
+  //   versus.innerHTML = `<img src="img/victoire.jpg"/>`
+  //   const fight = document.getElementById('fight')
+  //   fight.innerHTML = `<p>Bravo!</p>`
+    // const countPlayer = document.getElementById('countPlayer')
+    // countPlayer.innerHTML = `document.getElementById('countPlayer')+` V ``
   }
-
-  if (random === 2) {
-    const aleatoire = document.getElementById('aleatoire')
-    aleatoire.innerHTML = `<p>Ciseaux!</p>`
-    const versus = document.getElementById('versus')
-    versus.innerHTML = `<img src="img/victoire.jpg"/>`
-  }
-  
 }
 
 
 
 
-const onMouseOver = () => {
-  const choix = document.getElementById('choix')
-  choix.innerHTML = `<p>Clique sur ton choix</p>`
+// const onMouseOver = () => {
+//   const choix = document.getElementById('choix')
+//   choix.innerHTML = `<p>Clique sur ton choix</p>`
+// }
+
+
+let round = 0
+let playerScore = 0
+let aiScore = 0
+let playerSign
+let aiSign
+const signs = ["pierre", "feuille", "ciseaux"]
+const animationTime = 1500
+
+const rockButton = document.getElementById("pierre")
+const paperButton = document.getElementById("feuille")
+const scissorsButton = document.getElementById("ciseaux")
+const player = document.getElementById("player")
+const ai = document.getElementById("ai")
+const playerScoreDOM = document.getElementById("countPlayer")
+const aiScoreDOM = document.getElementById("countComputer")
+const gameHistory = document.getElementById("totalRound")
+const empty = document.getElementById("empty")
+
+// pas trouvé l'équivalent du score
+const score = document.getElementById("score")
+
+const gameButtons = document.getElementsByClassName("game-buttons")
+const game = document.getElementById("game")
+
+rockButton.addEventListener("click", () => {
+  handleClick("pierre")
+})
+paperButton.addEventListener("click", () => {
+  handleClick("feuille")
+})
+scissorsButton.addEventListener("click", () => {
+  handleClick("ciseaux")
+})
+
+const handleClick = sign => {
+  animate()
+
+  setTimeout(() => {
+    doRound(sign)
+  }, animationTime - 100)
+}
+
+const doRound = sign => {
+  playerSign = sign
+  aiSign = chooseAiSign()
+  
+  displayImages()
+  round = round + 1
+  
+  if (playerSign === "pierre") {
+    if (aiSign === "ciseaux") {
+      handlePlayerWin()
+    } else if (aiSign === "feuille") {
+      handleAiWin()
+    } else {
+      handleDraw()
+    }
+  } else if (playerSign === 'feuille') {
+    if (aiSign === "ciseaux") {
+      handleAiWin()
+    } else if (aiSign === "pierre") {
+      handlePlayerWin()
+    } else {
+      handleDraw()
+    }
+  } else if (playerSign === 'ciseaux') {
+    if (aiSign === "pierre") {
+      handleAiWin()
+    } else if (aiSign === "feuille") {
+      handlePlayerWin()
+    } else {
+      handleDraw()
+    }
+  }
+
+  updateScore()
+}
+
+const chooseAiSign = () => {
+  const index = Math.floor(Math.random() * 3)
+  const sign = signs[index]
+  return sign
+}
+
+const handlePlayerWin = () => {
+  playerScore = playerScore + 1
+  createHistoryRound("Gandalf l'emporte", "player")
+}
+
+const handleAiWin = () => {
+  aiScore = aiScore + 1
+  createHistoryRound("Le robot l'emporte", "ai")
+}
+
+const handleDraw = () => {
+  createHistoryRound("Match vraiment nul!")
+}
+
+const createHistoryRound = (message) => {
+  if (empty) {
+    empty.remove()
+  }
+
+  gameHistory.innerHTML = gameHistory.innerHTML + `
+    <div class="round">
+      <h4>Round ${round}</h4>
+      <div class="round-history">
+        <div class="gandalf round-dude">
+          <div class="avatar small"></div>
+          <img class="sign-history" src="./images/${playerSign}-player.png" />
+        </div>
+        <div class="trump round-dude">
+          <img class="sign-history" src="./images/${aiSign}-ai.png" />
+          <div class="avatar small"></div>
+        </div>
+      </div>
+      <h5>${message}</h5>
+    <div>
+  `
+}
+
+const updateScore = () => {
+  playerScoreDOM.innerHTML = playerScore
+  aiScoreDOM.innerHTML = aiScore
+
+  // scroller l'historique en bas a chaque fois que l'on rajoute
+  // un round
+  gameHistory.scrollTop = 100000
+
+  if (playerScore === 3) {
+    game.innerHTML = `
+      <h1>Shifumi</h1>
+      <div class="ring">
+        <div class="side gandalf">
+          <div class="player">
+            <div class="avatar"></div>
+            <h4>Gandalf le man</h4>
+          </div>
+        </div>
+      </div>
+      <h2>Bien joué, vous avez gagné!</h2>
+      <button class="game-buttons" onclick="location.reload()">Retry ?</button>
+    `
+  }
+
+  if (aiScore === 3) {
+    game.innerHTML = `
+      <h1>Shifumi</h1>
+      <div class="ring">
+        <div class="side trump">
+          <div class="player">
+            <h4>Un robot idiot</h4>
+            <div class="avatar"></div>
+          </div>
+        </div>
+      </div>
+      <h2>Le robot idiot a gagné...</h2>
+      <button class="game-buttons" onclick="location.reload()">Retry ?</button>
+    `
+  }
+}
+
+const displayImages = () => {
+  player.setAttribute("src", `./images/${playerSign}-player.png`)
+  ai.setAttribute("src", `./images/${aiSign}-ai.png`)
+}
+
+const animate = () => {
+  player.classList.add("sign-image-animated")
+  ai.classList.add("sign-image-animated")
+  disableButtons()
+
+  setTimeout(() => {
+    player.classList.remove("sign-image-animated")
+    ai.classList.remove("sign-image-animated")
+    enableButtons()
+  }, animationTime)
+}
+
+const disableButtons = () => {
+  const gamesButtonsArray = Array.from(gameButtons)
+
+  gamesButtonsArray.forEach(button => {
+    button.setAttribute("disabled", true)
+  })
+}
+
+const enableButtons = () => {
+  const gamesButtonsArray = Array.from(gameButtons)
+
+  gamesButtonsArray.forEach(button => {
+    button.removeAttribute("disabled")
+  })
 }
 
 
